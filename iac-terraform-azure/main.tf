@@ -21,14 +21,6 @@ provider "azurerm" {
 
 
 
-# module "service_principal" {
-#     source                              =  "./modules/service_principal"
-#     role_definition_name                =  "Contributor"
-#     rotation_days                       =  365
-#     name                                =  "sp-devsecops-1"
-
-# }
-
 module "resource_group" {
     source                              =  "./modules/resource_group"
     location                            =  "eastus"
@@ -58,8 +50,6 @@ module "aks" {
     kubernetes_version                  =  "1.24.9"
     agent_vm_count                      =  "2"
     agent_vm_size                       =  "Standard_D2_v2"
-    # service_principal_id                =  module.service_principal.client_id
-    # service_principal_secret            =  module.service_principal.client_secret
     vnet_subnet_id                      =  module.network.subnets[0]
     network_plugin                      =  "azure"
     network_policy                      =  "azure"
