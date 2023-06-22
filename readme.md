@@ -1,4 +1,4 @@
-# Reto - MB
+# Reto
 ## _DevSecOps_
 
 Proyecto que permite el despliegue automatico de infraestructura en la nube usando IaC (terraform) a traves de Azure Devops (Pipelines).
