@@ -24,8 +24,7 @@ stages:
         demands:
         - agent.name -equals reto-mibanco  
       steps:
-      #- bash: $(terraformWorkingDirectory)/checkov.sh $(terraformWorkingDirectory)
-      - bash: echo "hello"
+      - bash: $(terraformWorkingDirectory)/checkov.sh $(terraformWorkingDirectory)
         displayName: Checkov Static Code Analysis
   - stage: Deploy
     displayName: Deploy - IaC (Init, plan y apply)
